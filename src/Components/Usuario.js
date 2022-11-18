@@ -24,13 +24,13 @@ export default function Usuario(props) {
     }
   
   return (
-    <div class="usuario">
-      <img onClick={mudarFoto} src={imageUsuario}/>
+    <div data-test="user" class="usuario">
+      <img data-test="profile-image" onClick={mudarFoto} src={imageUsuario}/>
       <div class="texto">
         <strong>{props.nome}</strong>
-        <span>
+        <span data-test="name"> 
           {nomeUsuario}
-          <ion-icon onClick={mudarNome} name="pencil"></ion-icon>
+          <ion-icon data-test="edit-name" onClick={mudarNome} name="pencil"></ion-icon>
         </span>
       </div>
     </div>

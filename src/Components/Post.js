@@ -18,7 +18,7 @@ function Post(props){
    
   }
   return (
-    <div class="post">
+    <div class="post" data-test="post">
           <div class="topo">
             <div class="usuario">
               <img src={props.userImage} />
@@ -29,20 +29,20 @@ function Post(props){
             </div>
           </div>
 
-          <div class="conteudo">
+          <div class="conteudo" data-test="post-image">
             <img src={props.contentImage}/>
           </div>
 
           <div class="fundo">
             <div class="acoes">
               <div>
-                {foiCurtido ?  <ion-icon onClick={curtido} class ="curtido" name="heart"></ion-icon> : <ion-icon onClick={curtido} name="heart-outline"></ion-icon> 
+                {foiCurtido ?  <ion-icon onClick={curtido} class ="curtido" name="heart" data-test="like-post"></ion-icon> : <ion-icon onClick={curtido} name="heart-outline" data-test="like-post"></ion-icon> 
                  }
-                <ion-icon name="chatbubble-outline"></ion-icon>
+                <ion-icon name="chatbubble-outline" ></ion-icon>
                 <ion-icon name="paper-plane-outline"></ion-icon>
               </div>
               <div>
-                {taSalvo ? <ion-icon onClick={salvo} name="bookmark"></ion-icon> : <ion-icon onClick={salvo} name="bookmark-outline"></ion-icon>
+                {taSalvo ? <ion-icon onClick={salvo} name="bookmark" data-test="save-post"></ion-icon> : <ion-icon onClick={salvo} name="bookmark-outline" data-test="save-post"></ion-icon>
                  }
                
               </div>
@@ -50,9 +50,9 @@ function Post(props){
 
             <div class="curtidas">
               <img src={props.likedByImage} />
-              <div class="texto">
-                Curtido por <strong>{props.likedByText}</strong> e{" "}
-                <strong>{contador}</strong>
+              <div class="texto" >
+                Curtido por <strong >{props.likedByText}</strong> e{" "}
+                <strong data-test="likes-number">{contador}</strong>
               </div>
             </div>
           </div>
